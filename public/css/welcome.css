@@ -1,0 +1,134 @@
+.editorjs {
+    background: rgb(251, 251, 251);
+    font-size: 1.1rem;
+    color: rgb(37, 37, 37);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+
+
+.title {
+    margin: 0 0.3rem 2rem 0.5rem;
+    display: flex;
+    gap: 0.4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h2 {
+    line-height: 2rem;
+}
+
+.title button.btn {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    width: 10rem;
+    border-radius: 0.75rem;
+    border-width: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: var(--small-box-shadow);
+    background-color: #395E66;
+    transition: all 300ms ease;
+}
+
+.title button.btn:hover {
+    box-shadow: none;
+}
+
+.editorjs a, .editorjs b {
+    color: rgb(37, 37, 37) !important;
+}
+
+.ce-block__content,
+.ce-toolbar__content {
+    max-width: 90% !important;
+}
+
+.cdx-checklist__item-checkbox {
+    width: 1.1rem !important;
+    height: 1.1rem !important;
+}
+
+.cdx-checklist__item-checkbox::after {
+    top: 0.33rem !important;
+    left: 0.27rem !important;
+    width: 0.45rem !important;
+    height: 0.2rem !important;
+    border-left: 0.17rem solid #fff !important;
+    border-bottom: 0.17rem solid #fff !important;
+}
+
+.inline-code {
+    font-size: 0.9em !important;
+}
+
+.ce-code__textarea {
+    display: inline-block;
+    min-height: 200px;
+    font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+    color: #41314e;
+    line-height: 1.6em;
+    font-size: 12px;
+    background: #f8f7fa;
+    border: 1px solid #f1f1f4;
+    box-shadow: none;
+    white-space: pre-wrap;
+    word-wrap: normal;
+    overflow-x: auto;
+    resize: vertical;
+}
+
+.cdx-tip {
+    position: relative;
+}
+
+.cdx-tip [contentEditable=true][data-placeholder]::before{
+    position: absolute;
+    content: attr(data-placeholder);
+    color: #707684;
+    font-weight: normal;
+    opacity: 0;
+}
+
+.cdx-tip [contentEditable=true][data-placeholder]:empty::before {
+    opacity: 1;
+}
+
+.cdx-tip [contentEditable=true][data-placeholder]:empty:focus::before {
+    opacity: 0;
+}
+
+.cdx-tip::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 950 1050' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath fill='%237B7E89' stroke='%237B7E89' stroke-width='40' d='M500,210.2c-74.5,0-144.6,28.7-197.3,80.9C250,343.3,221,412.7,221,486.5c0,73.8,29,143.2,81.7,195.3c52.7,52.2,122.8,80.9,197.3,80.9s144.6-28.7,197.3-80.9C750,629.7,779,560.3,779,486.5c0-73.8-29-143.2-81.7-195.4C644.7,238.9,574.5,210.2,500,210.2z M500,704.5c-121.4,0-220.3-97.7-220.3-218c0-120.2,98.8-218,220.3-218c121.4,0,220.3,97.8,220.3,218C720.3,606.7,621.5,704.5,500,704.5z M503.2,138.8c16.2,0,29.4-13,29.4-29.2V39.2c0-16.1-13.2-29.2-29.4-29.2c-16.2,0-29.5,13-29.5,29.2v70.5C473.8,125.8,487,138.8,503.2,138.8z M256,237.6c7.6,0,15.1-2.9,20.8-8.6c11.5-11.4,11.5-29.8,0-41.2l-50.3-49.9c-11.5-11.4-30.1-11.4-41.6,0c-11.5,11.4-11.5,29.8,0,41.2l50.3,49.8C240.9,234.7,248.4,237.6,256,237.6z M151.6,422.2H80.4c-16.2,0-29.5,13-29.5,29.2c0,16.1,13.2,29.2,29.5,29.2h71.2c16.2,0,29.5-13,29.5-29.2C181.1,435.3,167.9,422.2,151.6,422.2z M919.6,428.8h-71.2c-16.2,0-29.5,13-29.5,29.2c0,16.1,13.2,29.2,29.5,29.2h71.2c16.2,0,29.5-13,29.5-29.2C949.1,441.8,935.9,428.8,919.6,428.8z M748.8,242.2c7.6,0,15.1-2.9,20.8-8.5l50.3-49.9c11.5-11.4,11.5-29.8,0-41.2s-30.1-11.4-41.7,0l-50.4,49.9c-11.5,11.4-11.5,29.8,0,41.2C733.7,239.3,741.1,242.2,748.8,242.2z M608.7,820.9H391.4c-16.2,0-29.5,13.1-29.5,29.2s13.2,29.2,29.5,29.2h217.3c16.2,0,29.5-13,29.5-29.2C638.1,834,624.9,820.9,608.7,820.9z M569.4,931.6H430.7c-16.2,0-29.5,13-29.5,29.2c0,16.1,13.2,29.2,29.5,29.2h138.6c16.2,0,29.5-13.1,29.5-29.2C598.8,944.7,585.6,931.6,569.4,931.6z'/%3E%3C/svg%3E");
+    width: 21px;
+    height: 20px;
+    background-size: 20px 20px;
+    position: absolute;
+    margin-top: 10px;
+    left: -30px;
+}
+
+@media all and (max-width: 735px) {
+    .cdx-tip::before {
+        display: none;
+    }
+}
+
+.cdx-tip__message {
+    min-height: 85px;
+}
+
+.cdx-tip__title {
+    margin-bottom: 6px;
+}
+
+
+
