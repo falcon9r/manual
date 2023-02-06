@@ -4,6 +4,24 @@
     var discardButton = document.getElementById("discard-btn");
     var publishButton = document.getElementById("publish-btn");
 
+    discardButton.addEventListener('click', function () {
+        if (initialData.isTemp) {
+            window.location.replace("/templates");
+        } else {
+            if (initialData.tempData == "0") {
+                toastr.warning("This topic has no default template!");
+            } else {
+                if (confirm("This action will override the data in the editor, but you will still need to save the data manually.\nDo you want to continue?")) {
+                    try {
+                        editor.setData(initialData.tempData);
+                    } catch (e) {
+                        toastr.warning("The associated template is empty!");
+                    }
+                }
+            }
+        }
+    });
+
     publishButton.addEventListener('click', function () {
         newState = initialData.isPublished == 1 ? 0 : 1;
         console.log(newState);
@@ -50,4 +68,46 @@
             }
         }
     });
+
+
+    removeButton.addEventListener('click', function () {
+        if (confirm("Are you sure you want to delete this \"" + initialData.name + "\"?")) {
+            if (initialData.isTemp) {
+                fetch("/template/delete/" + initialData.tempId, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': initialData.csrf
+                    }
+                }).then(res => {
+                    if (res.status == 201) {
+                        toastr.options.fadeIn = 0
+                        toastr.options.positionClass = "toast-top-center"
+                        toastr.info("Template was removed successfully!");
+                        setTimeout(() => { window.location.replace("/templates"); }, 500);
+                    } else {
+                        toastr.error("There was an error removing the template!");
+                    }
+                });
+            } else {
+                fetch("/topic/delete/" + initialData.topicId, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': initialData.csrf
+                    }
+                }).then(res => {
+                    if (res.status == 201) {
+                        toastr.options.fadeIn = 0
+                        toastr.options.positionClass = "toast-top-center"
+                        toastr.info("Topic was removed successfully!");
+                        setTimeout(() => { window.location.replace("/chapter/" + initialData.chapterId); }, 500);
+                    } else {
+                        toastr.error("There was an error removing the topic!");
+                    }
+                });
+            }
+        }
+    });
+
 </script>
