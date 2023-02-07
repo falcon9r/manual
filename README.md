@@ -54,7 +54,13 @@ for more [docs][6]
 ```bash
   php artisan migrate --seed
 ```
-
+Run the command to download the CKFinder code.
+After installing the Laravel package you need to download CKFinder code. 
+It is not shipped with the package due to different license terms. To install it, run the following artisan command:
+[docs](https://github.com/ckfinder/ckfinder-laravel-package)
+```bash
+    php artisan ckfinder:download
+```
 
 To create the symbolic link, you may use
 ```bash
