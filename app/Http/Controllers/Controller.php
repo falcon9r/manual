@@ -75,6 +75,9 @@ class Controller extends BaseController
             }
 
             $result = "";
+            if($latestObj == null){
+                continue;
+            }
             $keyword = $latestObj->updated_at == $latestObj->created_at ? "created" : "altered";
             if ($catId == 0) {
                 $result = " has ".$keyword." the chapter named \"".(string)($latestObj->title)."\". ||| ".($latestObj->updated_at->diffForHumans());
