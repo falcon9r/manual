@@ -22,7 +22,7 @@ Requirements
 Installation
 ------------
 
-[Download Zip][5] or using git, you can get project:
+Download Zip or using git, you can get project:
 
 Clone the repository
 ```bash
