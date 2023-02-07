@@ -15,10 +15,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::query()->create([
-            'name' => 'wilke',
-            'email' => 'admin@wilke.de',
-            'password' => bcrypt('123456'),
-        ]);
+        try {
+            User::query()->create([
+                'name' => 'wilke',
+                'email' => 'admin@wilke.de',
+                'password' => bcrypt('123456'),
+            ]);
+        }catch (\Exception $exception)
+        {
+            echo  $exception->getMessage();
+        }
     }
 }
