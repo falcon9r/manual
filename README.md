@@ -55,6 +55,12 @@ for more [docs][6]
   php artisan migrate --seed
 ```
 
+
+To create the symbolic link, you may use
+```bash
+    php artisan storage:link
+```
+
 Start the local development server
 ```bash
     php artisan serve
