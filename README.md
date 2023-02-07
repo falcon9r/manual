@@ -73,6 +73,8 @@ Start the local development server
 ```
 
 You can now access the server at http://localhost:8000
+**Warning**
+if you use other domain you must change value in .env (APP_URL)
 
 # Code overview
 
