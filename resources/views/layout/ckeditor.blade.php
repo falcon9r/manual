@@ -133,8 +133,8 @@
                 </div>
             </div>
         </div>
-        <textarea  id="ckeditor" name="content"></textarea>
     </div>
+    <textarea  id="ckeditor" name="content" class=""></textarea>
 @endsection
 
 
