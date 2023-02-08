@@ -39,6 +39,10 @@ Install all the dependencies using composer
    composer install
 ```
 
+```bash
+   composer update
+```
+
 Copy the example env file and make the required configuration changes in the .env file
 ```bash
    cp .env.example .env
