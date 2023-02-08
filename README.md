@@ -66,14 +66,16 @@ It is not shipped with the package due to different license terms. To install it
     php artisan ckfinder:download
 ```
 
-To create the symbolic link, you may use
-```bash
-    php artisan storage:link
-```
 
 Start the local development server
 ```bash
     php artisan serve
+```
+
+
+To create the symbolic link, you may use
+```bash
+    php artisan storage:link
 ```
 
 You can now access the server at http://localhost:8000
