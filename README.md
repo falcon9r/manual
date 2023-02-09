@@ -39,10 +39,6 @@ Install all the dependencies using composer
    composer install
 ```
 
-```bash
-   composer update
-```
-
 Copy the example env file and make the required configuration changes in the .env file
 ```bash
    cp .env.example .env
@@ -51,6 +47,11 @@ Copy the example env file and make the required configuration changes in the .en
 Generate a new application key
 ```bash
    php artisan key:generate
+```
+
+Update the dependencies using composer
+```bash
+   composer update
 ```
 
 Run the database migrations (Set the database connection in .env before migrating)
